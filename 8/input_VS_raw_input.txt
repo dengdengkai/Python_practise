@@ -1,0 +1,43 @@
+python 2.x 中： 
+
+raw_input() 和 input() 这两个内建函数都可以读取用户的输入来实现交互的目的，但二者存在差别。
+
+ 
+
+raw_input():
+
+顾名思义，不管用户输入的是字符还是数字，它都力求 '原样' 输出，因此对于用户输入的对象，该函数以字符串的形式保存下来。
+
+何谓 '原样' 输出，想一下print语句的使用。对于我们想要原样打印出来的语句，我们都是放在' '中以字符串的形式来实现。
+
+这里的raw_input()我们可以做类似print的理解(用户输入的就像是引号中的内容)， raw_input()将接受对象以字符串的形式保存下来来实现所谓的『raw』
+在 Python2.x 中 关于这两个输入函数 常见的错误无非两种：
+
+1  number = raw_input("enter a number please: ")   这里再please也没用， 正确做法：
+
+    number = int(raw_input("enter a number please: ")) 该 float 就换成float（）
+
+ 
+
+2  用过Python3.x 转到Python2.x 的时候，一不小心 name = input("enter a name for the file, please: ")
+
+    
+
+   Traceback (most recent call last):
+   File "<stdin>", line 1, in <module>
+   File "<string>", line 1, in <module>
+   NameError: name 'whatever you input' is not defined
+
+   这个时候把输入的内容加上引号就可以了，或许你可以使用raw_input()
+
+ 
+
+那是因为
+
+ 
+
+Python 3.x
+
+ 
+
+没有raw_input() 了，只有input()， 但是用法功能却跟Python2.x中的raw_input() 一样。。
